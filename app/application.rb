@@ -20,7 +20,7 @@ class Application
         resp.write "#{item}\n"
         end 
       else 
-        resp.write "There is nothing in the cart"
+        resp.write "Your cart is empty"
       end 
     elsif req.path.match(/add/)
       add_term = req.params["item"]
