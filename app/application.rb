@@ -46,7 +46,7 @@ class Application
   def handle_add(add_term)
     if @@items.include?(add_term)
       @@cart << add_term
-      return "#{add_term} was added to the cart"
+      return "added #{add_term}"
     else 
       return "Couldn't find #{add_term}"
     end 
