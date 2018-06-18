@@ -48,7 +48,7 @@ class Application
       @@cart << add_term
       return "added #{add_term}"
     else 
-      return "Couldn't find #{add_term}"
+      return "We don't have that item"
     end 
   end 
 end
