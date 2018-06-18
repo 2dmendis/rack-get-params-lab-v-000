@@ -48,7 +48,7 @@ class Application
   
   def handle_cart
     if @@cart != nil 
-      return @@cart.each {|item| "#{item}"}
+      return @@cart.each {|item| "#{item}\n"}
     else 
       return "Your cart is empty"
     end 
