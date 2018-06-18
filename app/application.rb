@@ -20,13 +20,7 @@ class Application
       end 
     elsif req.path.match(/add/)
       add_term = req.params["item"]
-      @@items.each do |item|
-        if item == add_term
-          @@cart << item
-        else 
-          resp.write "Item Not Found"
-        end 
-      end 
+      resp.write handle_add(add_term)
     else
       resp.write "Path Not Found"
     end
@@ -44,4 +38,13 @@ class Application
       return "Couldn't find #{search_term}"
     end
   end
+  
+  def handle_add(add_term)
+    if @@items.include?(add_term)
+      @@cart << add_term
+      return "#{add_term} was added to the cart"
+    else 
+      return "Couldn't find #{add_term}"
+    end 
+  end 
 end
